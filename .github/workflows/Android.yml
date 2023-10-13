@@ -15,23 +15,23 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: krdlab/setup-haxe@v1
+      - uses: actions/checkout@main
+      - uses: krdlab/setup-haxe@main
         with:
           haxe-version: 4.2.3
           
       - name: Cache haxelib path
-        uses: actions/cache@v2
+        uses: actions/cache@main
         with:
           path: |
             %HAXELIB_ROOT%
           key: ${{ runner.os }}-android
           
       - name: Setup Android SDK Tools
-        uses: android-actions/setup-android@v2.0.2
+        uses: android-actions/setup-android@main
         
       - name: Setup Java JDK
-        uses: actions/setup-java@v2.3.1
+        uses: actions/setup-java@main
         with:
           distribution: 'zulu'
           java-version: '11'
